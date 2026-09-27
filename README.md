@@ -2,8 +2,6 @@
 
 A Windows desktop application for managing the operations of a **Driving & Vehicle License Department (DVLD)** — people, drivers, license applications, tests, and issued licenses — built with **C#, WinForms, ADO.NET, and SQL Server**, following a strict **3-Tier Architecture**.
 
----
-
 ## Table of Contents
 
 - [Overview](#overview)
