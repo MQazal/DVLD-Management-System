@@ -116,8 +116,6 @@ The application expects a SQL Server database with (at least) the following tabl
 - `Tests`
 - `TestAppointments` (and `TestAppointments_View`)
 
-> ⚠️ **No `.sql` schema script is currently included in this repository.** You will need to create the database and these tables/views yourself (matching the column names used in each `cls...Data.cs` file), or add and commit a schema script for others to use.
-
 ## Getting Started
 
 ### Prerequisites
