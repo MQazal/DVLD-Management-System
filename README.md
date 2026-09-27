@@ -1,6 +1,3 @@
-# DVLD-Management-System
-A desktop management system for the Driving &amp; Vehicle License Department (DVLD), developed using C#, WinForms, SQL Server, ADO.NET, and 3-Tier Architecture.
-
 # DVLD Management System
 
 A Windows desktop application for managing the operations of a **Driving & Vehicle License Department (DVLD)** — people, drivers, license applications, tests, and issued licenses — built with **C#, WinForms, ADO.NET, and SQL Server**, following a strict **3-Tier Architecture**.
