@@ -16,7 +16,8 @@ namespace DVLD_PresentationLayer
 
         private void _AddRowsToTable()
         {
-            foreach (DataRow Row in clsTestType.GetTestsList().Rows)
+            DataTable Table = clsTestType.GetTestsList();
+            foreach (DataRow Row in Table.Rows)
             {
                 dgvTestTypes.Rows.Add(Row["TestTypeID"], Row["TestTypeTitle"], Row["TestTypeDescription"], Row["TestTypeFees"]);
             }

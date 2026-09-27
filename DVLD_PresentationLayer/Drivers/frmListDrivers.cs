@@ -23,16 +23,18 @@ namespace DVLD_PresentationLayer.Drivers
             _DriversTable.Columns.Add("Person ID", typeof(int));
             _DriversTable.Columns.Add("National Number", typeof(string));
             _DriversTable.Columns.Add("Full Name", typeof(string));
-            _DriversTable.Columns.Add("Created Date", typeof(DateTime));
+            _DriversTable.Columns.Add("Created Date", typeof(string));
             _DriversTable.Columns.Add("Active Licenses", typeof(byte));
         }
 
         private void _AddRowsToTable()
         {
-            foreach (DataRow Row in clsDriver.GetDriversList().Rows)
+            DataTable Table = clsDriver.GetDriversList();
+            foreach (DataRow Row in Table.Rows)
             {
                 _DriversTable.Rows.Add(Row["DriverID"], Row["PersonID"], Row["NationalNumber"], Row["FullName"],
-                    Row["CreatedDate"], Row["NumberOfActiveLicenses"]);
+                    clsFormat.SetDateFormat(Convert.ToDateTime(Row["CreatedDate"]), "d/MM/yyyy"),
+                    Row["NumberOfActiveLicenses"]);
             }
         }
 

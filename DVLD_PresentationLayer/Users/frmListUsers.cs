@@ -27,7 +27,8 @@ namespace DVLD_PresentationLayer
 
         private void _AddRowsToTable()
         {
-            foreach (DataRow Row in clsUser.GetUsersList().Rows)
+            DataTable Table = clsUser.GetUsersList();
+            foreach (DataRow Row in Table.Rows)
             {
                 _UsersTable.Rows.Add(Row["UserID"], Row["PersonID"], clsPerson.FindPerson(Convert.ToInt32(Row["PersonID"])).FullName,
                     Row["Username"], Row["IsActive"]);

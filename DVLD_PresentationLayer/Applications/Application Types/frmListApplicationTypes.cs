@@ -42,7 +42,8 @@ namespace DVLD_PresentationLayer
 
         private void _AddRowsToTable()
         {
-            foreach (DataRow Row in clsApplicationType.GetApplicationTypesList().Rows)
+            DataTable Table = clsApplicationType.GetApplicationTypesList();
+            foreach (DataRow Row in Table.Rows)
             {
                 _ApplicationTypesTable.Rows.Add(Row["ApplicationTypeID"], Row["ApplicationTitle"], Row["ApplicationFees"]);
             }

@@ -81,7 +81,8 @@ namespace DVLD_PresentationLayer.Applications.Release_Detained_License
 
         private void _AddRowsToTable()
         {
-            foreach (DataRow Row in clsDetainedLicense.GetDetainedLicensesList().Rows)
+            DataTable Table = clsDetainedLicense.GetDetainedLicensesList();
+            foreach (DataRow Row in Table.Rows)
             {
                 _DetainedLicensesTable.Rows.Add(Row["DetainID"], Row["LicenseID"],
                     clsFormat.SetDateFormat(Convert.ToDateTime(Row["DetainDate"]), "d/MM/yyyy"),

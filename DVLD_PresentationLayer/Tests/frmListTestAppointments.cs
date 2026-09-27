@@ -81,7 +81,8 @@ namespace DVLD_PresentationLayer.Tests
 
         private void _AddRowsToTable()
         {
-            foreach (DataRow Row in clsTestAppointment.GetTestAppointmentsList(_LocalDrivingLicenseApplicationID, clsTestType.GetTestTitle(_TestTypeID)).Rows)
+            DataTable Table = clsTestAppointment.GetTestAppointmentsList(_LocalDrivingLicenseApplicationID, clsTestType.GetTestTitle(_TestTypeID));
+            foreach (DataRow Row in Table.Rows)
             {
                 _TestAppointmentsTable.Rows.Add(Row["AppointmentID"],
                     clsFormat.SetDateFormat(Convert.ToDateTime(Row["AppointmentDate"]), "d/M/yyyy"), Row["PaidFees"],

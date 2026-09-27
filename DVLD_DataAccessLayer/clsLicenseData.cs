@@ -69,7 +69,7 @@ namespace DVLD_DataAccessLayer
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string Query = @"UPDATE Licenses SET
-                             ExpirationDate = @ExpirationDate, Notes = @Notes, IsActive = @IsActive, IssueReason = @IssueReason,
+                             ExpirationDate = @ExpirationDate, Notes = @Notes, IsActive = @IsActive, IssueReason = @IssueReason
                              WHERE LicenseID = @LicenseID";
 
             SqlCommand command = new SqlCommand(Query, connection);

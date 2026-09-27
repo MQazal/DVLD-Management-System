@@ -82,7 +82,8 @@ namespace DVLD_PresentationLayer
 
         private void _AddRowsToTable()
         {
-            foreach (DataRow Row in clsPerson.GetPeopleList().Rows)
+            DataTable Table = clsPerson.GetPeopleList();
+            foreach (DataRow Row in Table.Rows)
             {
                 _PeopleTable.Rows.Add(Row["PersonID"], Row["NationalNumber"], Row["FirstName"],
                     Row["SecondName"], Row["ThirdName"], Row["LastName"],

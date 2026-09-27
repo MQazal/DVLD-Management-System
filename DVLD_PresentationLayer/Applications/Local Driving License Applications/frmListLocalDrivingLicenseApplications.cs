@@ -67,7 +67,8 @@ namespace DVLD_PresentationLayer.Applications.Local_Driving_License_Applications
 
         private void _AddRowsToTable()
         {
-            foreach (DataRow Row in clsLocalDrivingLicenseApplication.GetLocalDrivingLicenseApplicationsList().Rows)
+            DataTable Table = clsLocalDrivingLicenseApplication.GetLocalDrivingLicenseApplicationsList();
+            foreach (DataRow Row in Table.Rows)
             {
                 _LocalDrivingLicenseApplicationsTable.Rows.Add(Row["LocalDrivingLicenseApplicationID"], Row["ClassName"],
                     Row["NationalNumber"], Row["FullName"],

@@ -79,7 +79,8 @@ namespace DVLD_PresentationLayer.Applications.Interntational_Driving_License_App
 
         private void _AddRowsToTable()
         {
-            foreach (DataRow Row in clsInternationalLicense.GetInternationalLicensesList().Rows)
+            DataTable Table = clsInternationalLicense.GetInternationalLicensesList();
+            foreach (DataRow Row in Table.Rows)
             {
                 _InternationaLicenseApplicationsTable.Rows.Add(Row["InternationalLicenseID"], Row["ApplicationID"],
                     Row["DriverID"], Row["IssuedUsingLocalLicenseID"],
