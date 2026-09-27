@@ -14,14 +14,6 @@ A Windows desktop application for managing the operations of a **Driving & Vehic
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 - [Database](#database)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
-  - [Running the App](#running-the-app)
-- [Known Limitations](#known-limitations)
-- [Roadmap Ideas](#roadmap-ideas)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
