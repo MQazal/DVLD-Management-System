@@ -2,8 +2,6 @@
 
 A Windows desktop application for managing the operations of a **Driving & Vehicle License Department (DVLD)** — people, drivers, license applications, tests, and issued licenses — built with **C#, WinForms, ADO.NET, and SQL Server**, following a strict **3-Tier Architecture**.
 
-> 📚 This project follows the DVLD course from **Programming Advices** (Backend Development Track, Course #19), and is intended as a learning/portfolio project demonstrating layered architecture in a real-world-style domain.
-
 ---
 
 ## Table of Contents
