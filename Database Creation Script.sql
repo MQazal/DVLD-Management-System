@@ -112,8 +112,6 @@ JOIN LicenseClasses LC ON LDLA.ClassID = LC.ClassID
 JOIN Applications A ON LDLA.ApplicationID = A.ApplicationID
 JOIN People P ON A.ApplicantPersonID = P.PersonID;
 
-ALTER TABLE TestAppointments ADD RetakeTestApplicationID INT REFERENCES Applications(ApplicationID) NOT NULL;
-
 CREATE VIEW AS
 SELECT TestAppointments.AppointmentID,
 TestAppointments.LocalDrivingLicenseApplicationID,
