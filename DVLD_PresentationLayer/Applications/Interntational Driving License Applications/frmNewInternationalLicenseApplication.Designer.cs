@@ -459,6 +459,7 @@
             this.ctrlLocalDrivingLicenseInfoWithFilter.Name = "ctrlLocalDrivingLicenseInfoWithFilter";
             this.ctrlLocalDrivingLicenseInfoWithFilter.Size = new System.Drawing.Size(1420, 542);
             this.ctrlLocalDrivingLicenseInfoWithFilter.TabIndex = 125;
+            this.ctrlLocalDrivingLicenseInfoWithFilter.SelectLicense += new System.Action<int>(this.ctrlLocalDrivingLicenseInfoWithFilter_SelectLicense);
             // 
             // frmNewInternationalLicenseApplication
             // 

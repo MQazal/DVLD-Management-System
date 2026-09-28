@@ -13,7 +13,7 @@ namespace DVLD_PresentationLayer.Licenses.Detain_License
         public frmDetainLicense()
         {
             InitializeComponent();
-            ctrlLocalDrivingLicenseInfoWithFilter.LicenseIDBack += CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack;
+            //ctrlLocalDrivingLicenseInfoWithFilter.LicenseIDBack += CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack;
         }
 
         private void _LoadLicenseData(int LicenseID)
@@ -23,11 +23,11 @@ namespace DVLD_PresentationLayer.Licenses.Detain_License
             lnklblShowLicenseHistory.Enabled = true;
         }
 
-        private void CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack(int LicenseID)
-        {
-            _LoadLicenseData(LicenseID);
-            btnDetain.Enabled = true;
-        }
+        //private void CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack(int LicenseID)
+        //{
+        //    _LoadLicenseData(LicenseID);
+        //    btnDetain.Enabled = true;
+        //}
 
         private void _SetDefaultDetainLicenseInfo()
         {
@@ -89,6 +89,12 @@ namespace DVLD_PresentationLayer.Licenses.Detain_License
         private void lnklblShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new frmShowLocalDrivingLicenseInfo(_CurrentLicense.LicenseID).ShowDialog();
+        }
+
+        private void ctrlLocalDrivingLicenseInfoWithFilter_SelectLicense(int obj)
+        {
+            _LoadLicenseData(obj);
+            btnDetain.Enabled = true;
         }
     }
 }

@@ -22,13 +22,13 @@ namespace DVLD_PresentationLayer
         {
             if (_Filter == _enSearchFilter.enPersonID)
             {
-                tbxFilter.Text = PersonID.ToString();
-                cbxFilter.SelectedIndex = 0;
+                txbxSerachValue.Text = PersonID.ToString();
+                cmbxFilter.SelectedIndex = 0;
             }
             else
             {
-                tbxFilter.Text = tbxFilter.Text;
-                cbxFilter.SelectedIndex = 1;
+                txbxSerachValue.Text = txbxSerachValue.Text;
+                cmbxFilter.SelectedIndex = 1;
             }
 
             gbxFilter.Enabled = false;
@@ -36,7 +36,7 @@ namespace DVLD_PresentationLayer
 
         private bool _IsSearchTextHasLetters()
         {
-            foreach (char Letter in tbxFilter.Text)
+            foreach (char Letter in txbxSerachValue.Text)
             {
                 if (char.IsLetter(Letter))
                     return true;
@@ -46,19 +46,19 @@ namespace DVLD_PresentationLayer
 
         private bool _IsPersonExit()
         {
-            if (cbxFilter.SelectedIndex == 0)
+            if (cmbxFilter.SelectedIndex == 0)
             {
                 if (_IsSearchTextHasLetters())
                 {
                     return false;
                 }
                 _Filter = _enSearchFilter.enPersonID;
-                return clsPerson.IsPersonExist(Convert.ToInt32(tbxFilter.Text));
+                return clsPerson.IsPersonExist(Convert.ToInt32(txbxSerachValue.Text));
             }
             else
             {
                 _Filter = _enSearchFilter.enNationalNumber;
-                return clsPerson.IsPersonExist(tbxFilter.Text);
+                return clsPerson.IsPersonExist(txbxSerachValue.Text);
             }
         }
 
@@ -75,12 +75,12 @@ namespace DVLD_PresentationLayer
             {
                 if (_Filter == _enSearchFilter.enPersonID)
                 {
-                    PersonID = Convert.ToInt32(tbxFilter.Text);
+                    PersonID = Convert.ToInt32(txbxSerachValue.Text);
                     PersonInformation.ShowPersonData(PersonID);
                 }
                 else
                 {
-                    PersonID = clsPerson.FindPerson(tbxFilter.Text).PersonID;
+                    PersonID = clsPerson.FindPerson(txbxSerachValue.Text).PersonID;
                     PersonInformation.ShowPersonData(PersonID);
                 }
                 _CloseSearch();
@@ -91,12 +91,12 @@ namespace DVLD_PresentationLayer
 
         private bool _IsSearchValid()
         {
-            if (cbxFilter.SelectedItem == null)
+            if (cmbxFilter.SelectedItem == null)
             {
                 MessageBox.Show("No filter type was selected!", "Failed Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            else if (string.IsNullOrEmpty(tbxFilter.Text))
+            else if (string.IsNullOrEmpty(txbxSerachValue.Text))
             {
                 MessageBox.Show("Search box is empty!", "Failed Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -132,6 +132,11 @@ namespace DVLD_PresentationLayer
             PersonInformation.ShowPersonData(NewPersonID);
             PersonID = NewPersonID;
             _CloseSearch();
+        }
+
+        private void cmbxFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txbxSerachValue.Focus();
         }
     }
 }

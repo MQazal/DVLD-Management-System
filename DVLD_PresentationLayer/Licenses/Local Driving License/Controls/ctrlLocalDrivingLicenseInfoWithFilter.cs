@@ -5,9 +5,20 @@ namespace DVLD_PresentationLayer.Licenses.Local_Driving_License.Controls
 {
     public partial class ctrlLocalDrivingLicenseInfoWithFilter : UserControl
     {
-        public delegate void SendLicenseID(int LicenseID);
+        //public delegate void SendLicenseID(int LicenseID);
 
-        public event SendLicenseID LicenseIDBack;
+        //public event SendLicenseID LicenseIDBack;
+
+        public event Action<int> SelectLicense;
+
+        protected virtual void OnLicenseSelecting(int LicenseID)
+        {
+            Action<int> Handler = SelectLicense;
+            if (Handler != null)
+            {
+                Handler(LicenseID);
+            }
+        }
 
         public ctrlLocalDrivingLicenseInfoWithFilter()
         {
@@ -28,7 +39,8 @@ namespace DVLD_PresentationLayer.Licenses.Local_Driving_License.Controls
             {
                 e.Handled = true;
                 ctrlLocalDrivingLicenseInfo.ShowLicenseData(Convert.ToInt32(txbxLicenseID.Text));
-                LicenseIDBack?.Invoke(Convert.ToInt32(txbxLicenseID.Text));
+                //LicenseIDBack?.Invoke(Convert.ToInt32(txbxLicenseID.Text));
+                OnLicenseSelecting(Convert.ToInt32(txbxLicenseID.Text));
                 this.Focus();
             }
         }

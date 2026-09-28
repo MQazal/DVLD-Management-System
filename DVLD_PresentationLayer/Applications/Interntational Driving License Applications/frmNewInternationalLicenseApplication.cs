@@ -3,6 +3,7 @@ using DVLD_PresentationLayer.Global_Classes;
 using DVLD_PresentationLayer.Licenses.International_Licenses;
 using DVLD_PresentationLayer.Licenses.Local_Driving_License;
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace DVLD_PresentationLayer.Applications.Interntational_Driving_License_Applications
@@ -16,14 +17,14 @@ namespace DVLD_PresentationLayer.Applications.Interntational_Driving_License_App
         public frmNewInternationalLicenseApplication()
         {
             InitializeComponent();
-            ctrlLocalDrivingLicenseInfoWithFilter.LicenseIDBack += CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack;
+            //ctrlLocalDrivingLicenseInfoWithFilter.LicenseIDBack += CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack;
         }
 
-        private void CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack(int LicenseID)
-        {
-            lblLocalLicenseID.Text = LicenseID.ToString();
-            _CurrentLocalLicense = clsLicense.FindLicenseByLicenseID(LicenseID);
-        }
+        //private void CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack(int LicenseID)
+        //{
+        //    lblLocalLicenseID.Text = LicenseID.ToString();
+        //    _CurrentLocalLicense = clsLicense.FindLicenseByLicenseID(LicenseID);
+        //}
 
         private void _SetDefaultNewInternationalLicenseApplicationInfo()
         {
@@ -124,6 +125,12 @@ namespace DVLD_PresentationLayer.Applications.Interntational_Driving_License_App
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ctrlLocalDrivingLicenseInfoWithFilter_SelectLicense(int obj)
+        {
+            _CurrentLocalLicense = clsLicense.FindLicenseByLicenseID(obj);
+            lblLocalLicenseID.Text = _CurrentLocalLicense.LicenseID.ToString();
         }
     }
 }

@@ -15,7 +15,7 @@ namespace DVLD_PresentationLayer.Applications.Replace_Lost_Or_Damaged_License
         public frmReplaceLostOrDamagedLicenseApplication()
         {
             InitializeComponent();
-            ctrlLocalDrivingLicenseInfoWithFilter.LicenseIDBack += CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack;
+            //ctrlLocalDrivingLicenseInfoWithFilter.LicenseIDBack += CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack;
         }
 
         private void _LoadOldLicenseData(int LicenseID)
@@ -26,11 +26,11 @@ namespace DVLD_PresentationLayer.Applications.Replace_Lost_Or_Damaged_License
             lnklblShowLicenseHistory.Enabled = true;
         }
 
-        private void CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack(int LicenseID)
-        {
-            _LoadOldLicenseData(LicenseID);
-            btnReplacament.Enabled = true;
-        }
+        //private void CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack(int LicenseID)
+        //{
+        //    _LoadOldLicenseData(LicenseID);
+        //    btnReplacament.Enabled = true;
+        //}
 
         private void _SetDefaultRenewDrivingLicenseApplicationInfo()
         {
@@ -99,6 +99,12 @@ namespace DVLD_PresentationLayer.Applications.Replace_Lost_Or_Damaged_License
         private void lnklblShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new frmShowLocalDrivingLicenseInfo(_NewLocalLicense.LicenseID).ShowDialog();
+        }
+
+        private void ctrlLocalDrivingLicenseInfoWithFilter_SelectLicense(int obj)
+        {
+            _LoadOldLicenseData(obj);
+            btnReplacament.Enabled = true;
         }
     }
 }

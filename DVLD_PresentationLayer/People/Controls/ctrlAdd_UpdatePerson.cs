@@ -15,7 +15,7 @@ namespace DVLD_PresentationLayer
 
         clsPerson _Person;
 
-        public int NewID = default(int);
+        public int NewID { set; get; }
 
         private _enMode _SelectMode(int PersonID)
         {

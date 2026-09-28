@@ -25,7 +25,7 @@ namespace DVLD_PresentationLayer.Applications.Release_Detained_License
         {
             InitializeComponent();
             _InitializeLicenseIDState(LicenseID);
-            ctrlLocalDrivingLicenseInfoWithFilter.LicenseIDBack += CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack;
+            //ctrlLocalDrivingLicenseInfoWithFilter.LicenseIDBack += CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack;
         }
 
         private void _LoadDetainedLicenseData()
@@ -41,12 +41,12 @@ namespace DVLD_PresentationLayer.Applications.Release_Detained_License
             lnklblShowLicenseHistory.Enabled = true;
         }
 
-        private void CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack(int LicenseID)
-        {
-            _CurrentDetainedLicense = clsLicense.FindLicenseByLicenseID(LicenseID);
-            _LoadDetainedLicenseData();
-            btnRelease.Enabled = true;
-        }
+        //private void CtrlLocalDrivingLicenseInfoWithFilter_LicenseIDBack(int LicenseID)
+        //{
+        //    _CurrentDetainedLicense = clsLicense.FindLicenseByLicenseID(LicenseID);
+        //    _LoadDetainedLicenseData();
+        //    btnRelease.Enabled = true;
+        //}
 
         private void lnklblShowLicenseHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -90,6 +90,13 @@ namespace DVLD_PresentationLayer.Applications.Release_Detained_License
             }
             ReleaseDetainedLicense();
             btnRelease.Enabled = false;
+        }
+
+        private void ctrlLocalDrivingLicenseInfoWithFilter_SelectLicense(int obj)
+        {
+            _CurrentDetainedLicense = clsLicense.FindLicenseByLicenseID(obj);
+            _LoadDetainedLicenseData();
+            btnRelease.Enabled = true;
         }
     }
 }

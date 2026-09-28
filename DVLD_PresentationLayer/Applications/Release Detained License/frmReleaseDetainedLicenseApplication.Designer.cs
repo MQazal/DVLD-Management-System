@@ -459,6 +459,7 @@
             this.ctrlLocalDrivingLicenseInfoWithFilter.Name = "ctrlLocalDrivingLicenseInfoWithFilter";
             this.ctrlLocalDrivingLicenseInfoWithFilter.Size = new System.Drawing.Size(1413, 547);
             this.ctrlLocalDrivingLicenseInfoWithFilter.TabIndex = 196;
+            this.ctrlLocalDrivingLicenseInfoWithFilter.SelectLicense += new System.Action<int>(this.ctrlLocalDrivingLicenseInfoWithFilter_SelectLicense);
             // 
             // frmReleaseDetainedLicenseApplication
             // 

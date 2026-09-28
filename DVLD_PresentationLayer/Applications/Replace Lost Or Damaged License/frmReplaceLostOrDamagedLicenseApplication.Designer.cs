@@ -537,6 +537,7 @@
             this.ctrlLocalDrivingLicenseInfoWithFilter.Name = "ctrlLocalDrivingLicenseInfoWithFilter";
             this.ctrlLocalDrivingLicenseInfoWithFilter.Size = new System.Drawing.Size(1406, 549);
             this.ctrlLocalDrivingLicenseInfoWithFilter.TabIndex = 185;
+            this.ctrlLocalDrivingLicenseInfoWithFilter.SelectLicense += new System.Action<int>(this.ctrlLocalDrivingLicenseInfoWithFilter_SelectLicense);
             // 
             // frmReplaceLostOrDamagedLicenseApplication
             // 
